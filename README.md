@@ -220,8 +220,3 @@ If you have a suggestion that would make this better, please fork the repo and c
 3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4.  Push to the Branch (`git push origin feature/AmazingFeature`)
 5.  Open a Pull Request
-
----
-
-## 📧 Contact
-Project Link: [https://github.com/your-username/toolkitpro](https://github.com/your-username/toolkitpro)
