@@ -3,7 +3,8 @@ import { ExternalLink, Pin, PinOff, Edit, Trash2, Copy, Share2, Tag } from 'luci
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { useTools, Tool } from '@/hooks/useTools';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
+import { useTools, Tool, Category } from '@/hooks/useTools';
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
 import ToolEditModal from '@/components/ToolEditModal';
@@ -157,55 +158,78 @@ const ToolCard: React.FC<ToolCardProps> = ({ tool, showEditButton = true }) => {
 
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <Button 
-                size="sm" 
-                onClick={() => window.open(tool.link, '_blank')}
-                className="transition-all duration-200"
-              >
-                <ExternalLink className="h-4 w-4 mr-2" />
-                Open
-              </Button>
-              <Button
-                size="sm"
-                variant="outline"
-                onClick={handleCopyLink}
-              >
-                <Copy className="h-4 w-4" />
-              </Button>
-              <Button
-                size="sm"
-                variant="outline"
-                onClick={handleShare}
-              >
-                <Share2 className="h-4 w-4" />
-              </Button>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button 
+                    size="sm" 
+                    onClick={() => window.open(tool.link, '_blank')}
+                    className="transition-all duration-200"
+                  >
+                    <ExternalLink className="h-4 w-4 sm:mr-2" />
+                    <span className="hidden sm:inline">Open</span>
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Open Link</p>
+                </TooltipContent>
+              </Tooltip>
+
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button size="sm" variant="outline" onClick={handleCopyLink}>
+                    <Copy className="h-4 w-4" />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Copy Link</p>
+                </TooltipContent>
+              </Tooltip>
+
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button size="sm" variant="outline" onClick={handleShare}>
+                    <Share2 className="h-4 w-4" />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Share</p>
+                </TooltipContent>
+              </Tooltip>
             </div>
 
             <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
               {showEditButton && (
-                <ToolEditModal tool={tool} categories={categories} />
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <div>
+                      <ToolEditModal tool={tool} categories={categories} />
+                    </div>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>Edit</p>
+                  </TooltipContent>
+                </Tooltip>
               )}
-              <Button
-                size="sm"
-                variant="ghost"
-                onClick={handleTogglePin}
-                disabled={loading}
-              >
-                {tool.is_pinned ? (
-                  <PinOff className="h-4 w-4" />
-                ) : (
-                  <Pin className="h-4 w-4" />
-                )}
-              </Button>
-              {/* --- THIS IS THE CHANGE --- */}
-              <Button
-                size="sm"
-                variant="destructive"
-                onClick={handleDelete}
-                disabled={loading}
-              >
-                <Trash2 className="h-4 w-4" />
-              </Button>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button size="sm" variant="ghost" onClick={handleTogglePin} disabled={loading}>
+                    {tool.is_pinned ? <PinOff className="h-4 w-4" /> : <Pin className="h-4 w-4" />}
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{tool.is_pinned ? 'Unpin' : 'Pin'}</p>
+                </TooltipContent>
+              </Tooltip>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button size="sm" variant="destructive" onClick={handleDelete} disabled={loading}>
+                    <Trash2 className="h-4 w-4" />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Delete</p>
+                </TooltipContent>
+              </Tooltip>
             </div>
           </div>
 
