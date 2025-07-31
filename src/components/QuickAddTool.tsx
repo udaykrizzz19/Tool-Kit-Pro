@@ -87,7 +87,7 @@ const QuickAddTool = () => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button className="shadow-medium hover:shadow-glow transition-all duration-300">
+        <Button className="transition-all duration-300">
           <Plus className="mr-2 h-4 w-4" />
           Quick Add Tool
         </Button>
@@ -147,9 +147,9 @@ const QuickAddTool = () => {
                 {categories.map((category) => (
                   <SelectItem key={category.id} value={category.id}>
                     <div className="flex items-center gap-2">
+                      {/* Removed color dot */}
                       <div 
-                        className="w-3 h-3 rounded-full" 
-                        style={{ backgroundColor: category.color }}
+                        className="w-3 h-3 rounded-full bg-foreground/20" 
                       />
                       {category.name}
                     </div>

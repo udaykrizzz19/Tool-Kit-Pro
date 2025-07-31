@@ -110,9 +110,8 @@ const ToolCard: React.FC<ToolCardProps> = ({ tool, showEditButton = true }) => {
     <SpotlightCard 
       className={cn(
         "group transition-all duration-300 hover:-translate-y-1",
-        tool.is_pinned && "ring-2 ring-primary/20 shadow-glow"
+        tool.is_pinned && "ring-2 ring-primary/20"
       )}
-      spotlightColor="rgba(59, 130, 246, 0.1)"
     >
       <Card className="bg-transparent border-0 shadow-none">
         <CardHeader className="pb-3">
@@ -129,8 +128,7 @@ const ToolCard: React.FC<ToolCardProps> = ({ tool, showEditButton = true }) => {
             {tool.category && (
               <div className="flex items-center gap-1 ml-2">
                 <div 
-                  className="w-3 h-3 rounded-full" 
-                  style={{ backgroundColor: tool.category.color }}
+                  className="w-3 h-3 rounded-full bg-foreground/20"
                 />
                 <span className="text-xs text-muted-foreground hidden sm:inline">
                   {tool.category.name}
@@ -162,7 +160,7 @@ const ToolCard: React.FC<ToolCardProps> = ({ tool, showEditButton = true }) => {
               <Button 
                 size="sm" 
                 onClick={() => window.open(tool.link, '_blank')}
-                className="shadow-soft hover:shadow-medium transition-all duration-200"
+                className="transition-all duration-200"
               >
                 <ExternalLink className="h-4 w-4 mr-2" />
                 Open
@@ -199,12 +197,12 @@ const ToolCard: React.FC<ToolCardProps> = ({ tool, showEditButton = true }) => {
                   <Pin className="h-4 w-4" />
                 )}
               </Button>
+              {/* --- THIS IS THE CHANGE --- */}
               <Button
                 size="sm"
-                variant="ghost"
+                variant="destructive"
                 onClick={handleDelete}
                 disabled={loading}
-                className="text-destructive hover:text-destructive"
               >
                 <Trash2 className="h-4 w-4" />
               </Button>

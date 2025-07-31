@@ -114,7 +114,7 @@ const Settings = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
+    <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="border-b border-border/50 bg-background/80 backdrop-blur-sm sticky top-0 z-40">
         <div className="container mx-auto px-4 py-4">
@@ -191,8 +191,9 @@ const Settings = () => {
                     minLength={6}
                   />
                 </div>
-
+                {/* --- CHANGED: Added variant="success" --- */}
                 <Button 
+                  variant="success"
                   type="submit" 
                   disabled={loading || !passwordData.newPassword || !passwordData.confirmPassword}
                   className="w-full"
@@ -206,6 +207,7 @@ const Settings = () => {
           {/* Danger Zone */}
           <Card className="border-destructive/20">
             <CardHeader>
+              {/* --- This will now correctly be red --- */}
               <CardTitle className="text-destructive">Important</CardTitle>
               <CardDescription>
                 Permanently delete your account and all associated data
@@ -214,6 +216,7 @@ const Settings = () => {
             <CardContent>
               <AlertDialog>
                 <AlertDialogTrigger asChild>
+                  {/* --- This will now correctly be red --- */}
                   <Button variant="destructive" className="w-full">
                     <Trash2 className="h-4 w-4 mr-2" />
                     Delete Account
@@ -230,6 +233,7 @@ const Settings = () => {
                   </AlertDialogHeader>
                   <AlertDialogFooter>
                     <AlertDialogCancel>Cancel</AlertDialogCancel>
+                    {/* --- This will now correctly be red --- */}
                     <AlertDialogAction
                       onClick={handleDeleteAccount}
                       disabled={loading}

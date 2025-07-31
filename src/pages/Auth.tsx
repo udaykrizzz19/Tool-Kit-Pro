@@ -109,14 +109,15 @@ const Auth = () => {
           distortion: 'turbulentDistortion',
           speedUp: 1.5,
           colors: {
-            roadColor: 0x080808,
-            islandColor: 0x0a0a0a,
-            background: 0x000000,
-            shoulderLines: 0x131318,
-            brokenLines: 0x131318,
-            leftCars: [0xD856BF, 0x6750A2, 0xC247AC],
-            rightCars: [0x03B3C3, 0x0E5EA5, 0x324555],
-            sticks: 0x03B3C3,
+  roadColor: 0x000000,           // Deep black road
+  islandColor: 0x060606,         // Slightly lighter island tone
+  background: 0x0B051D,          // Dark purple-black background
+  shoulderLines: 0xDAD5B1,       // Soft yellowish-white lines
+  brokenLines: 0xDAD5B1,         // Same as shoulder lines
+  leftCars: [0xFF0E1C, 0xB20814, 0xFF4444],   // Red trail variations from left
+  rightCars: [0xFFEFB2, 0xF5E89C, 0xF2DB87],  // Yellow-white trail variations from right
+  sticks: 0xFFEFB2,              // Reflective post lights
+
           }
         }} />
       </div>
@@ -126,13 +127,13 @@ const Auth = () => {
         <div className="w-full max-w-md">
           {/* Mobile Header */}
           <div className="lg:hidden text-center mb-8">
-            <h1 className="text-3xl font-bold gradient-text mb-2">ToolKitPro</h1>
+            <h1 className="text-3xl font-bold mb-2">ToolKitPro</h1>
             <p className="text-muted-foreground">
               {isLogin ? 'Welcome back!' : 'Go ahead and set up your account'}
             </p>
           </div>
 
-          <Card className="glass-card border-border/50 shadow-xl">
+          <Card className="glass-card border-border/50">
             <CardContent className="p-6 lg:p-8">
               {/* Desktop Header */}
               <div className="hidden lg:block text-center mb-8">
@@ -151,7 +152,7 @@ const Auth = () => {
                   className={cn(
                     "flex-1 py-2 px-4 text-sm font-medium rounded-md transition-all",
                     isLogin 
-                      ? "bg-background text-foreground shadow-sm" 
+                      ? "bg-background text-foreground" 
                       : "text-muted-foreground hover:text-foreground"
                   )}
                 >
@@ -162,7 +163,7 @@ const Auth = () => {
                   className={cn(
                     "flex-1 py-2 px-4 text-sm font-medium rounded-md transition-all",
                     !isLogin 
-                      ? "bg-background text-foreground shadow-sm" 
+                      ? "bg-background text-foreground" 
                       : "text-muted-foreground hover:text-foreground"
                   )}
                 >
@@ -218,7 +219,7 @@ const Auth = () => {
 
                   <div className="flex items-center justify-between text-sm">
                     <label className="flex items-center gap-2">
-                      <input type="checkbox" className="rounded" />
+                      <input type="checkbox" className="rounded border-border" />
                       <span className="text-muted-foreground">Remember me</span>
                     </label>
                     <button type="button" className="text-primary hover:underline">
@@ -226,7 +227,7 @@ const Auth = () => {
                     </button>
                   </div>
                   
-                  <Button type="submit" className="w-full h-12 bg-primary hover:bg-primary/90" disabled={loading}>
+                  <Button type="submit" className="w-full h-12" disabled={loading}>
                     {loading ? "Logging in..." : "Login"}
                   </Button>
                 </form>
@@ -311,7 +312,7 @@ const Auth = () => {
                     </Select>
                   </div>
                   
-                  <Button type="submit" className="w-full h-12 bg-primary hover:bg-primary/90" disabled={loading}>
+                  <Button type="submit" className="w-full h-12" disabled={loading}>
                     {loading ? "Creating account..." : "Create Account"}
                   </Button>
                 </form>

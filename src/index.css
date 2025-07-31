@@ -5,71 +5,72 @@
 
 @layer base {
   :root {
-    /* Enhanced Color System */
-    --background: 220 15% 97%;
-    --foreground: 220 15% 9%;
-    --card: 0 0% 100%;
-    --card-foreground: 220 15% 9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 9%;
-    --primary: 252 94% 67%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 252 100% 85%;
-    --secondary: 240 6% 96%;
-    --secondary-foreground: 240 6% 10%;
-    --muted: 240 5% 96%;
-    --muted-foreground: 240 4% 46%;
-    --accent: 240 5% 96%;
-    --accent-foreground: 240 6% 10%;
+    /* Black & White Theme - Light Mode */
+    --background: 0 0% 100%; /* white */
+    --foreground: 0 0% 9%;   /* near-black */
+    --card: 0 0% 100%;       /* white */
+    --card-foreground: 0 0% 9%; /* near-black */
+    --popover: 0 0% 100%;    /* white */
+    --popover-foreground: 0 0% 9%; /* near-black */
+    --primary: 0 0% 9%;      /* near-black */
+    --primary-foreground: 0 0% 100%; /* white */
+    --secondary: 0 0% 96%;   /* light gray */
+    --secondary-foreground: 0 0% 9%; /* near-black */
+    --muted: 0 0% 96%;       /* light gray */
+    --muted-foreground: 0 0% 45%; /* medium-dark gray */
+    --accent: 0 0% 94%;      /* light gray */
+    --accent-foreground: 0 0% 9%; /* near-black */
+    --border: 0 0% 87%;      /* light gray */
+    --input: 0 0% 87%;       /* light gray */
+    --ring: 0 0% 9%;         /* near-black */
+    --radius: 0.75rem;
+
+    /* --- UPDATED: Re-introduced red for destructive actions --- */
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 6% 91%;
-    --input: 240 6% 91%;
-    --ring: 252 94% 67%;
-    --radius: 0.75rem;
-    
-    /* Custom Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--muted)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
-    
-    /* Custom Shadows */
-    --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --shadow-large: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    --shadow-glow: 0 0 40px hsla(var(--primary), 0.15);
+
+    /* --- ADDED: Green for success actions --- */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    /* Custom Properties */
+    --spotlight-color: rgba(0, 0, 0, 0.05);
   }
 
   .dark {
-    --background: 224 15% 6%;
-    --foreground: 0 0% 95%;
-    --card: 224 15% 9%;
-    --card-foreground: 0 0% 95%;
-    --popover: 224 15% 9%;
-    --popover-foreground: 0 0% 95%;
-    --primary: 252 94% 67%;
-    --primary-foreground: 224 15% 6%;
-    --primary-glow: 252 100% 85%;
-    --secondary: 224 15% 12%;
-    --secondary-foreground: 0 0% 95%;
-    --muted: 224 15% 12%;
-    --muted-foreground: 0 0% 60%;
-    --accent: 224 15% 12%;
-    --accent-foreground: 0 0% 95%;
-    --destructive: 0 84% 60%;
+    /* Black & White Theme - Dark Mode */
+    --background: 0 0% 0%; /* black */
+    --foreground: 0 0% 98%; /* near-white */
+    --card: 0 0% 0%;       /* black */
+    --card-foreground: 0 0% 98%; /* near-white */
+    --popover: 0 0% 0%;    /* black */
+    --popover-foreground: 0 0% 98%; /* near-white */
+    --primary: 0 0% 98%;    /* near-white */
+    --primary-foreground: 0 0% 9%; /* near-black */
+    --secondary: 0 0% 10%;   /* dark gray */
+    --secondary-foreground: 0 0% 90%; /* light gray */
+    --muted: 0 0% 10%;       /* dark gray */
+    --muted-foreground: 0 0% 60%; /* medium-light gray */
+    --accent: 0 0% 12%;      /* dark gray */
+    --accent-foreground: 0 0% 98%; /* near-white */
+    --border: 0 0% 20%;      /* dark gray */
+    --input: 0 0% 20%;       /* dark gray */
+    --ring: 0 0% 98%;       /* near-white */
+
+    /* --- UPDATED: Re-introduced red for destructive actions --- */
+    --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
-    --border: 224 15% 18%;
-    --input: 224 15% 18%;
-    --ring: 252 94% 67%;
-    
-    /* Dark mode shadows */
-    --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-    --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
-    --shadow-large: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    --shadow-glow: 0 0 40px hsla(var(--primary), 0.3);
+
+    /* --- ADDED: Green for success actions --- */
+    --success: 142 66% 46%;
+    --success-foreground: 0 0% 100%;
+
+    /* Custom Properties */
+    --spotlight-color: rgba(255, 255, 255, 0.05);
   }
 }
 
+/* ... rest of the file is unchanged ... */
 @layer base {
   * {
     @apply border-border;
@@ -98,26 +99,6 @@
     @apply backdrop-blur-sm bg-card/90 border border-border/50;
   }
   
-  .gradient-text {
-    @apply bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent;
-  }
-  
-  .shadow-soft {
-    box-shadow: var(--shadow-soft);
-  }
-  
-  .shadow-medium {
-    box-shadow: var(--shadow-medium);
-  }
-  
-  .shadow-large {
-    box-shadow: var(--shadow-large);
-  }
-  
-  .shadow-glow {
-    box-shadow: var(--shadow-glow);
-  }
-  
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -127,7 +108,6 @@
     display: none;
   }
   
-  /* Spotlight Card Styles */
   .card-spotlight {
     position: relative;
     border-radius: 1.5rem;
@@ -136,7 +116,6 @@
     overflow: hidden;
     --mouse-x: 50%;
     --mouse-y: 50%;
-    --spotlight-color: rgba(255, 255, 255, 0.05);
   }
 
   .card-spotlight::before {
