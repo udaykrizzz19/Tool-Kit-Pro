@@ -4,7 +4,7 @@
   <p align="center">
     Your Personal, Blazing-Fast Toolkit Manager
     <br />
-    <a href="#-about-the-project"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/udaykrizzz19/Tool-Kit-Pro"><strong>Explore the docs »</strong></a>
     <br />
     <br />
   </p>
@@ -34,10 +34,6 @@ ToolKitPro is a minimalist, yet powerful application to save, categorize, and ma
 
 Whether you're a developer, designer, researcher, or student, ToolKitPro helps you organize the digital clutter and keep your essential resources just a click away.
 
-<!-- Optional: Add a screenshot/GIF of the application -->
-<!-- <p align="center">
-  <img src="public/app_screenshot.png" alt="ToolKitPro Screenshot">
-</p> -->
 
 ### ✨ Key Features
 
@@ -83,7 +79,7 @@ Ensure you have the following installed on your machine:
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/toolkitpro.git
+    git clone https://github.com/udaykrizzz19/Tool-Kit-Pro
     cd toolkitpro
     ```
 
@@ -228,7 +224,4 @@ If you have a suggestion that would make this better, please fork the repo and c
 ---
 
 ## 📧 Contact
-
-Your Name - [@YourTwitterHandle](https://twitter.com/YourTwitterHandle) - your.email@example.com
-
 Project Link: [https://github.com/your-username/toolkitpro](https://github.com/your-username/toolkitpro)
