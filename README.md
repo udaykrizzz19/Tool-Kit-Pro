@@ -153,7 +153,7 @@ This project requires a Supabase backend for database, authentication, and stora
       FOR EACH ROW EXECUTE FUNCTION public.handle_new_user();
     ```
 
-3.  **Row Level Security (RLS)**: For data privacy and security, you must enable RLS and create policies. Run this SQL in the editor:
+3.  **Row Level Security (RLS)**: For data privacy and security, you must enable RLS and create policies. Run this code in the SQL editor:
 
     ```sql
     -- Enable RLS for all relevant tables
