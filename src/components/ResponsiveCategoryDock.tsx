@@ -116,7 +116,7 @@ const ResponsiveCategoryDock: React.FC<ResponsiveCategoryDockProps> = ({
                   <Menu className="h-4 w-4" />
                 </Button>
               </CollapsibleTrigger>
-              <CollapsibleContent className="absolute top-full mt-2 right-0 z-[9999]">
+              <CollapsibleContent className="absolute top-full mt-2 right-0 nav-dropdown">
                 <div className="glass-card rounded-lg p-2 shadow-xl min-w-48 space-y-1 bg-background/95 backdrop-blur-sm border border-border">
                   {hiddenCategories.map((category) => (
                     <CategoryButton key={category.id} category={category} showIcon />

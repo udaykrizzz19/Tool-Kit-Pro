@@ -81,7 +81,29 @@ const Index = () => {
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-4 md:py-8 space-y-6 md:space-y-8">
+      {/* Fixed Navigation Bar - Mobile Only */}
+      <div className="mobile-nav-fixed md:hidden">
+        <div className="container mx-auto px-4 py-3">
+          <ResponsiveCategoryDock
+            categories={categories}
+            selectedCategory={selectedCategory}
+            onCategoryChange={setSelectedCategory}
+          />
+        </div>
+      </div>
+
+      {/* Desktop Navigation Bar */}
+      <div className="hidden md:block">
+        <div className="container mx-auto px-4 py-4">
+          <ResponsiveCategoryDock
+            categories={categories}
+            selectedCategory={selectedCategory}
+            onCategoryChange={setSelectedCategory}
+          />
+        </div>
+      </div>
+
+      <main className="container mx-auto px-4 py-4 md:py-8 space-y-6 md:space-y-8 md:mt-0 mt-[100px]">
         {/* Search Bar */}
         <div className="relative max-w-md mx-auto">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
@@ -92,13 +114,6 @@ const Index = () => {
             className="pl-10 glass-card border-border/50 text-sm md:text-base"
           />
         </div>
-
-        {/* Category Filters */}
-        <ResponsiveCategoryDock
-          categories={categories}
-          selectedCategory={selectedCategory}
-          onCategoryChange={setSelectedCategory}
-        />
 
         {/* Pinned Tools */}
         {pinnedTools.length > 0 && (

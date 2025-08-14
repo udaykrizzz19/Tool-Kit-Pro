@@ -135,4 +135,22 @@
   .card-spotlight:focus-within::before {
     opacity: 0.6;
   }
+
+  /* Fixed Mobile Navigation Styles */
+  .mobile-nav-fixed {
+    position: fixed;
+    top: 65px; /* Header height: content (~40px) + padding (24px) + border (1px) */
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: hsl(var(--background) / 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid hsl(var(--border) / 0.5);
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  }
+
+  /* Ensure dropdown menus appear above all content */
+  .nav-dropdown {
+    z-index: 9999 !important;
+  }
 }
