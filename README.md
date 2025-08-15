@@ -2,7 +2,7 @@
   <img src="https://cdn-icons-png.flaticon.com/512/2689/2689604.png" alt="ToolKitPro Logo" width="120" />
   <h1 align="center">ToolKitPro</h1>
   <p align="center">
-    Your Personal, Blazing-Fast Toolkit Manager
+    Your Personal, Blazing-Fast Toolkit Manager for Everyday
     <br />
     <a href="https://github.com/udaykrizzz19/Tool-Kit-Pro"><strong>Explore the docs »</strong></a>
     <br />
