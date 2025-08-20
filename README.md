@@ -34,7 +34,6 @@ ToolKitPro is a minimalist, yet powerful application to save, categorize, and ma
 
 Whether you're a developer, designer, researcher, or student, ToolKitPro helps you organize the digital clutter and keep your essential resources just a click away.
 
-
 ### ✨ Key Features
 
 -   🔐 **Secure User Authentication**: Full sign-up, login, and session management powered by Supabase Auth.
